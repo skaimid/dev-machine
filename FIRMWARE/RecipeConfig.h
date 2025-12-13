@@ -51,20 +51,8 @@ struct RecipeStep {
 };
 
 // ============================================
-// 流程配置示例：C-41 流程
+// 注意：具体的配方定义请参考 Recipe.h
 // ============================================
-// 注意看第 4 步和最后一步的水洗，使用了 repeatCount
-const RecipeStep PROCESS_C41[] = {
-    // 名称,          阀门,        时间(ms),    重复次数
-    {"Pre-Heat",    VALVE_WATER,  60000,      1}, // 温杯预热
-    {"Developer",   VALVE_DEV,    210000,     1}, // 显影 3:30
-    {"Blix",        VALVE_BLEACH, 390000,     1}, // 漂定 6:30
-    {"Washing",     VALVE_WATER,  30000,      5}, // 【关键】水洗：每次30秒，重复5次！
-    {"Stabilizer",  VALVE_FIX,    60000,      1}  // 稳定液 (假设接在Fix口)
-};
-
-// 获取流程步骤数量
-#define PROCESS_C41_STEPS (sizeof(PROCESS_C41) / sizeof(PROCESS_C41[0]))
 
 #endif // RECIPE_CONFIG_H
 
